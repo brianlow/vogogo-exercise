@@ -6,7 +6,7 @@
     "start": "node index.js",
     "lint": "./node_modules/.bin/jshint index.js src/ test/",
     "pretest": "npm run-script lint",
-    "test": "./node_modules/.bin/_mocha --recursive -r should test/",
+    "test": "./node_modules/.bin/_mocha --recursive --require should test/",
     "watch": "./node_modules/.bin/_mocha --recursive --require should --watch test/"
   },
   "author": "Brian Low",
@@ -18,5 +18,8 @@
     "should": "^4.0.4",
     "mocha": "^1.21.4",
     "jshint": "^2.5.5"
+  },
+  "dependencies": {
+    "underscore": "^1.7.0"
   }
 }

@@ -32,5 +32,12 @@ Questions
 
 Todo
 ----
-- document prices.yaml
+- load prices.yaml
 - command line args: commander, nomnom, minimist, yargs
+
+
+clean up item list
+	- remove empty
+	- sort
+	
+run through pricing functions to transform into receipt
