@@ -4,6 +4,7 @@ var sprintf = require("sprintf-js").sprintf;
 
 function format(receiptLines) {
 
+	var FORMAT = "%-30s %10s";
 	var total = sum(receiptLines);
 	var lines = [];
 
@@ -12,11 +13,11 @@ function format(receiptLines) {
 	}
 
 	_.each(receiptLines, function(receiptLine) {
-		lines.push(sprintf("%-30s %10s", receiptLine.name + " (" + receiptLine.description + ")", humanize.formatNumber(receiptLine.amount, 2)));
+		lines.push(sprintf(FORMAT, receiptLine.name + " (" + receiptLine.description + ")", humanize.formatNumber(receiptLine.amount, 2)));
 	});
 
 	lines.push("---");
-	lines.push(sprintf("%-30s %10s", "Total", humanize.formatNumber(total, 2)));
+	lines.push(sprintf(FORMAT, "Total", humanize.formatNumber(total, 2)));
 
 	return lines;
 }

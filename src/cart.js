@@ -3,13 +3,16 @@ var receipt = require("./receipt.js");
 var pricingSchemeList = require('./pricingSchemeList.js');
 
 function calculate(pricingSchemeFile, items) {
+	var pricingSchemes = pricingSchemeList.parse(pricingSchemeFile);
+
 	var context = {
 		remainingItems: items,
 		receiptLines: []
 	};
 
-	var pricingSchemes = pricingSchemeList.parse(pricingSchemeFile);
-
+	// the pricingSchemes form a pipeline with each 
+	// pricingScheme converting remainingItems into receiptLines
+	// and the result being fed into the next pricingScheme
 	_.each(pricingSchemes, function(pricingScheme) {
 		context = pricingScheme.execute(context.remainingItems, context.receiptLines);
 	});
