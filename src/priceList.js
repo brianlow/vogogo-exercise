@@ -3,12 +3,6 @@ var yaml = require('js-yaml');
 var _ = require("underscore");
 var unitPricingScheme = require("./unitPricingScheme.js");
 
-function load(filename) {
-	"use strict";
-
-	return parse(fs.readFileSync(filename, "utf8"));
-}
-
 function parse(s) {
 	"use strict";
 
@@ -31,6 +25,5 @@ function isNullOrUndefined(obj) {
 }
 
 module.exports = {
-	load: load,
 	parse: parse
 };

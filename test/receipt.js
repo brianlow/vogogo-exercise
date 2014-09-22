@@ -1,4 +1,3 @@
-var assert = require("assert");
 var receipt = require("../src/receipt.js");
 
 describe('receipt', function() {

@@ -1,0 +1,14 @@
+# prices
+- {scheme: 'unit', item: 'Apple', price: 0.50}
+- {scheme: 'unit', item: 'Orange', price: 0.80}
+
+# items
+apple
+oRange
+Apple
+
+# expected
+Apple (2 @ 0.50)                     1.00
+Orange (1 @ 0.80)                    0.80
+---
+Total                                1.80

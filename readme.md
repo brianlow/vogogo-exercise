@@ -19,6 +19,7 @@ Other Commands
 Todo
 ----
 - integration tests
+- work on Windows and Unix
 - naming priceList vs pricingSchemes
 - command line args: commander, nomnom, minimist, yargs
 - handle unknown item

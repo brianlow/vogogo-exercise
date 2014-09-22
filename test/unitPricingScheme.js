@@ -1,6 +1,5 @@
 /*jshint expr: true*/
 
-var assert = require("assert");
 var unitPricingScheme = require("../src/unitPricingScheme.js");
 
 describe('unitPricingScheme', function() {

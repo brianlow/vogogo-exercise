@@ -1,6 +1,5 @@
 /*jshint expr: true*/
 
-var assert = require("assert");
 var priceList = require("../src/priceList.js");
 
 describe('priceList', function() {

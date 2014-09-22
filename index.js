@@ -1,7 +1,7 @@
 var _ = require("underscore");
 var readline = require('readline');
-var priceList = require('./src/priceList.js');
-var receipt = require("./src/receipt.js");
+var fs = require("fs");
+var cart = require('./src/cart.js');
 
 var items = [];
 var isInteractive = (process.stdin.isTTY === true);
@@ -34,22 +34,11 @@ rl.on('close', function() {
 
 function done() {
 	
-	var pricingSchemes = priceList.load("priceList.yaml");
+	var priceListFile = fs.readFileSync("priceList.yaml");
 	
-	var context = {
-		remainingItems: items,
-		receiptLines: []
-	};
+	var lines = cart.calculate(priceListFile, items);
 
-	_.each(pricingSchemes, function(pricingScheme) {
-		context = pricingScheme.execute(context.remainingItems, context.receiptLines);
-	});
-
-	var lines = receipt.format(context.receiptLines);
-
- 	_.each(lines, function (line) {
- 		console.log(line);
- 	});
+	console.log(lines.join("\r\n"));
 
  	process.exit();
 }
