@@ -7,11 +7,11 @@ describe('unitPricingScheme', function() {
 
 	describe('given a price for apples', function() {
 
-		var pricingFunction = unitPricingScheme.makePricingFunction("Apple", 0.50);
+		var pricingScheme = unitPricingScheme.create("Apple", 0.50);
 
 		it('should lookup price for a single apple', function() {
 
-			var result = pricingFunction(["Apple"], []);
+			var result = pricingScheme.execute(["Apple"], []);
 
 			result.receiptLines.should.eql([{
 				name: "Apple",
@@ -22,7 +22,7 @@ describe('unitPricingScheme', function() {
 
 		it('should lookup price for an apple with different case and whitespace', function() {
 
-			var result = pricingFunction([" aPpLe "], []);
+			var result = pricingScheme.execute([" aPpLe "], []);
 
 			result.receiptLines.should.eql([{
 				name: "Apple",
@@ -33,7 +33,7 @@ describe('unitPricingScheme', function() {
 
 		it('should lookup price for two apples', function() {
 
-			var result = pricingFunction(["Apple", "Apple"], []);
+			var result = pricingScheme.execute(["Apple", "Apple"], []);
 
 			result.receiptLines.should.eql([{
 				name: "Apple",
@@ -44,14 +44,14 @@ describe('unitPricingScheme', function() {
 
 		it('should remove the apple from the remaining items and leave the orange', function() {
 
-			var result = pricingFunction(["Apple", "Orange"], []);
+			var result = pricingScheme.execute(["Apple", "Orange"], []);
 
 			result.remainingItems.should.be.eql(["Orange"]);
 		});
 
 		it('should not price the orange', function() {
 
-			var result = pricingFunction(["Orange"], []);
+			var result = pricingScheme.execute(["Orange"], []);
 
 			result.receiptLines.should.be.empty;
 		});
@@ -64,9 +64,14 @@ describe('unitPricingScheme', function() {
 				amount: 1.00
 			};
 
-			var result = pricingFunction([], [existingReceiptLine]);
+			var result = pricingScheme.execute([], [existingReceiptLine]);
 
 			result.receiptLines.should.be.eql([existingReceiptLine]);
+		});
+
+		it('should describe itself with toString', function() {
+
+			pricingScheme.toString().should.be.eql("Apple @ 0.50 each");
 		});
 
 	});

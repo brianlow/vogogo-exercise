@@ -1,10 +1,10 @@
 var _ = require("underscore");
 var humanize = require("humanize-plus");
 
-function makePricingFunction(item, price) {
+function create(item, price) {
 	"use strict";
 
-	return function(remainingItems, receiptLines) {
+	function execute(remainingItems, receiptLines) {
 
 		var numberOfMatchingItems = _.filter(remainingItems, isMatch).length;
 
@@ -20,11 +20,22 @@ function makePricingFunction(item, price) {
 			receiptLines: receiptLines,
 			remainingItems: _.reject(remainingItems, isMatch)
 		};
-	};
+	}
 
 	function isMatch(i) {
 		return (i + "").toUpperCase().trim() === item.toUpperCase();
 	}
+
+	function toString() {
+		return item + " @ " + humanize.formatNumber(price, 2) + " each";
+	}
+
+	return {
+		execute: execute,
+		toString: toString
+	};
 }
 
-module.exports.makePricingFunction = makePricingFunction;
+module.exports = {
+	create: create
+};
