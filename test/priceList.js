@@ -5,7 +5,7 @@ var priceList = require("../src/priceList.js");
 
 describe('priceList', function() {
 
-	it('should load unit pricing scheme', function() {
+	it('should parse unit pricing scheme', function() {
 
 		var pricingSchemes = priceList.parse("- {scheme: unit, item: Apple, price: 0.5}");
 
@@ -13,7 +13,7 @@ describe('priceList', function() {
 
 	});
 
-	it('should load pricing scheme with space in the name', function() {
+	it('should parse pricing scheme with space in the name', function() {
 
 		var pricingSchemes = priceList.parse("- {scheme: unit, item: 'Mandarin Orange', price: 1.25}");
 

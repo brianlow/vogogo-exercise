@@ -3,9 +3,9 @@ var receipt = require("../src/receipt.js");
 
 describe('receipt', function() {
 
-	it('should generate receipt with one line', function() {
+	it('should format receipt with one line', function() {
 
-		var result = receipt.generate([{
+		var result = receipt.format([{
 			name: "Apple",
 			description: "2 @ 0.50",
 			amount: 0.50
@@ -18,9 +18,9 @@ describe('receipt', function() {
 		]);
 	});
 
-	it('should generate receipt with one line', function() {
+	it('should format receipt with one line', function() {
 
-		var result = receipt.generate([{
+		var result = receipt.format([{
 			name: "Apple",
 			description: "2 @ 0.50",
 			amount: 0.50
@@ -40,7 +40,7 @@ describe('receipt', function() {
 
 	it('should format amounts with thousands separator', function() {
 
-		var result = receipt.generate([{
+		var result = receipt.format([{
 			name: "Apple",
 			description: "a description",
 			amount: 1111.50
@@ -54,7 +54,7 @@ describe('receipt', function() {
 	});
 
 	it('should return message if no receiptLines provided', function() {
-		var result = receipt.generate([]);
+		var result = receipt.format([]);
 
 		result.should.be.eql([
 			"No items",

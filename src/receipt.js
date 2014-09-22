@@ -2,7 +2,7 @@ var _ = require("underscore");
 var humanize = require("humanize-plus");
 var sprintf = require("sprintf-js").sprintf;
 
-function generate(receiptLines) {
+function format(receiptLines) {
 
 	var total = sum(receiptLines);
 	var lines = [];
@@ -28,5 +28,5 @@ function sum(receiptLines) {
 }
 
 module.exports = {
-	generate: generate
+	format: format
 };

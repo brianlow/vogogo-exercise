@@ -16,26 +16,10 @@ Other Commands
     npm run watch   - run all tests and watch for changes
 
 
-Questions
----------
-- how to show discounts for "buy 1 get 1 free"?
-
-	Apple 1 @ 0.50 = 0.50
-	Apple 1 @ 0.00 = 0.00
-
-	Apple 2 @ 0.50                =  1.00
-		discount buy 1 get 1 free = -0.50
-
-	Apple 2 @ 0.50                  =  0.75
-		discount buy 1 get 1 @ 0.25 = -0.50
-
-
 Todo
 ----
-- load prices.yaml
+- integration tests
+- naming priceList vs pricingSchemes
 - command line args: commander, nomnom, minimist, yargs
 - handle unknown item
-- handle empty item
 - document the data flow
-
-run through pricing functions to transform into receipt

@@ -1,0 +1,5 @@
+#
+# Price list
+#
+- {scheme: 'unit', item: 'Apple', price: 0.50}
+- {scheme: 'unit', item: 'Orange', price: 0.80}
