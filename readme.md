@@ -34,10 +34,8 @@ Todo
 ----
 - load prices.yaml
 - command line args: commander, nomnom, minimist, yargs
+- handle unknown item
+- handle empty item
+- document the data flow
 
-
-clean up item list
-	- remove empty
-	- sort
-	
 run through pricing functions to transform into receipt
