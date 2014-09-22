@@ -5,6 +5,7 @@
 // Lines starting with hash (#) are comments. 
 //
 var fs = require("fs");
+var os = require("os");
 var _ = require("underscore");
 var should = require("should");
 var cart = require("../src/cart.js");
@@ -30,13 +31,13 @@ describe('examples', function() {
 
 function parse(filename) {
 	var file = fs.readFileSync("./test/examples/" + filename, "utf8");
-	var lines = file.toString().split("\r\n");
+	var lines = file.toString().split(os.EOL);
 
 	lines = _.reject(lines, isComment);
 	var groups = splitOnBlankLine(lines);
 
 	return {
-		pricingSchemeList: groups[0].join("\r\n"),
+		pricingSchemeList: groups[0].join(os.EOL),
 		items: groups[1],
 		expected: groups[2]
 	};

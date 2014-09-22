@@ -40,8 +40,10 @@ You can also pipe in a list of items:
 Setup
 -----
 
-    clone repository
-    npm install
+- [install node and npm](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) (note on some unix distributions, the default repository has really old versions of node)
+- clone repository
+- `npm install`
+
 
 
 Other Commands

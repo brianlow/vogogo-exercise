@@ -1,6 +1,7 @@
 var _ = require("underscore");
 var readline = require('readline');
 var fs = require("fs");
+var os = require("os");
 var cart = require('./src/cart.js');
 
 var items = [];
@@ -38,7 +39,7 @@ function done() {
 	
 	var lines = cart.calculate(pricingSchemeList, items);
 
-	console.log(lines.join("\r\n"));
+	console.log(lines.join(os.EOL));
 
  	process.exit();
 }
