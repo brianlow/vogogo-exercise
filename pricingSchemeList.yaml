@@ -1,0 +1,16 @@
+#
+# List of pricing schemes
+#
+# Pricing schemes are applied in the order they appear here.
+# For items with multiple pricing schemes, list the schemes
+# with the largest schemes first. e.g Pricing for a set of 
+# 3 apples before the unit price (size of 1).
+#
+
+# Apples: 3 for 1.30, or 0.50 each
+- {scheme: 'set', item: 'Apple', size: 3, price: 1.30}
+- {scheme: 'unit', item: 'Apple', price: 0.50}
+
+# Oranges: buy 2 get the second half off, or 0.80 each
+- {scheme: 'set', item: 'Orange', size: 2, price: 1.20}
+- {scheme: 'unit', item: 'Orange', price: 0.80}

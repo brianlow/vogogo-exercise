@@ -1,14 +1,14 @@
 var _ = require("underscore");
 var receipt = require("./receipt.js");
-var priceList = require('./priceList.js');
+var pricingSchemeList = require('./pricingSchemeList.js');
 
-function calculate(priceListFile, items) {
+function calculate(pricingSchemeFile, items) {
 	var context = {
 		remainingItems: items,
 		receiptLines: []
 	};
 
-	var pricingSchemes = priceList.parse(priceListFile);
+	var pricingSchemes = pricingSchemeList.parse(pricingSchemeFile);
 
 	_.each(pricingSchemes, function(pricingScheme) {
 		context = pricingScheme.execute(context.remainingItems, context.receiptLines);

@@ -18,7 +18,7 @@ describe('examples', function() {
 
 			var example = parse(filename);
 
-			var actual = cart.calculate(example.priceListFile, example.items);
+			var actual = cart.calculate(example.pricingSchemeList, example.items);
 
 			actual.should.be.eql(example.expected);
 
@@ -36,7 +36,7 @@ function parse(filename) {
 	var groups = splitOnBlankLine(lines);
 
 	return {
-		priceListFile: groups[0].join("\r\n"),
+		pricingSchemeList: groups[0].join("\r\n"),
 		items: groups[1],
 		expected: groups[2]
 	};

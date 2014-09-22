@@ -1,5 +1,5 @@
 #
-# The app doesn't natively support pricing schemese such ash:
+# The app doesn't natively support pricing schemese such as:
 #    "buy one get one free", or 
 #    "buy one get one half off" 
 # However these can be simulated with the set pricing scheme. 

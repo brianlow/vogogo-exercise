@@ -5,23 +5,30 @@ Vogogo Development Exercise
 Usage
 -----
 
-    npm install
     npm start
+
+
+Setup
+-----
+
+    clone
+    npm install
 
 
 Other Commands
 --------------
 
-    npm test        - run all test
-    npm run watch   - run all tests and watch for changes
+    npm test        - lint, run all test
+    npm run watch   - lint, run all tests and watch for changes
+    npm run lint	- lint
 
 
 Todo
 ----
-- work on Windows and Unix
-- naming priceList vs pricingSchemes
 - command line args: commander, nomnom, minimist, yargs
 - document the data flow
+- document prices.yaml
+- work on Windows and Unix
 
 Possible Improvements
 ---------------------

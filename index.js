@@ -34,9 +34,9 @@ rl.on('close', function() {
 
 function done() {
 	
-	var priceListFile = fs.readFileSync("priceList.yaml");
+	var pricingSchemeList = fs.readFileSync("pricingSchemeList.yaml");
 	
-	var lines = cart.calculate(priceListFile, items);
+	var lines = cart.calculate(pricingSchemeList, items);
 
 	console.log(lines.join("\r\n"));
 
