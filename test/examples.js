@@ -20,7 +20,7 @@ describe('examples', function() {
 
 			var actual = cart.calculate(example.priceListFile, example.items);
 
-			example.expected.should.be.eql(actual);
+			actual.should.be.eql(example.expected);
 
 		});
 

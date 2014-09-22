@@ -14,6 +14,10 @@ function calculate(priceListFile, items) {
 		context = pricingScheme.execute(context.remainingItems, context.receiptLines);
 	});
 
+	if (context.remainingItems.length > 0) {
+		return ["Cannot create receipt, no price for " + (context.remainingItems[0]) + "."];
+	}
+
 	var lines = receipt.format(context.receiptLines);
 
 	return lines;

@@ -1,0 +1,9 @@
+# prices
+- {scheme: 'unit', item: 'Apple', price: 0.50}
+
+# items
+pear
+pear
+apple
+
+Cannot create receipt, no price for pear.

@@ -21,7 +21,6 @@ Todo
 - work on Windows and Unix
 - naming priceList vs pricingSchemes
 - command line args: commander, nomnom, minimist, yargs
-- handle unknown item
 - document the data flow
 
 Possible Improvements
