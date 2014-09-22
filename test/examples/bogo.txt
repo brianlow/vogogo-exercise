@@ -1,0 +1,24 @@
+#
+# The app doesn't natively support pricing schemese such ash:
+#    "buy one get one free", or 
+#    "buy one get one half off" 
+# However these can be simulated with the set pricing scheme. 
+# For example:
+#   "buy one get one half off" for $0.50 apples 
+# can be expressed as:
+#   "buy a set of 2 for $0.75"
+#
+- {scheme: 'set',  item: 'Apple', size: 2, price: 0.75 }
+- {scheme: 'unit', item: 'Apple', price: 0.50}
+
+# items
+apple
+apple
+apple
+
+# expected
+Apple (2 for 0.75)                   0.75
+Apple (1 @ 0.50)                     0.50
+---
+Total                                1.25
+

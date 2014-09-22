@@ -12,6 +12,14 @@ describe('priceList', function() {
 
 	});
 
+	it('should parse set pricing scheme', function() {
+
+		var pricingSchemes = priceList.parse("- {scheme: set, item: Apple, size: 3, price: 1.30}");
+
+		pricingSchemes.map(toString).should.be.eql(["Apple 3 for 1.30"]);
+
+	});
+
 	it('should parse pricing scheme with space in the name', function() {
 
 		var pricingSchemes = priceList.parse("- {scheme: unit, item: 'Mandarin Orange', price: 1.25}");

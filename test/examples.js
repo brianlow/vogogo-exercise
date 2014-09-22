@@ -1,3 +1,9 @@
+//
+// This file is a meta-suite, it loads test cases from text files in the examples/ subfolder.
+// Each file contains three sections: prices, items and expected output. The sections are 
+// delimited by a blank line. Lines starting with hash (#) are comments. This code will create
+// and run a mocha test for each file.
+//
 var fs = require("fs");
 var _ = require("underscore");
 var should = require("should");

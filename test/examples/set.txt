@@ -1,0 +1,20 @@
+# prices
+- {scheme: 'set',  item: 'Apple', size: 3, price: 1.30 }
+- {scheme: 'unit', item: 'Apple', price: 0.50}
+- {scheme: 'set',  item: 'Orange', size: 2, price: 1.20 }
+- {scheme: 'unit', item: 'Orange', price: 0.80}
+
+# items
+apple
+orange
+orange
+apple
+apple
+apple
+
+# expected
+Apple (3 for 1.30)                   1.30
+Apple (1 @ 0.50)                     0.50
+Orange (2 for 1.20)                  1.20
+---
+Total                                3.00
